@@ -97,6 +97,7 @@ export const Student = sequelize.define(STUDENT_TABLE, {
   email: {
     type: DataTypes.STRING(254),
     allowNull: true,
+    unique: true,
     field: 'email_estudiante',
     validate: {
       isEmail: true,
