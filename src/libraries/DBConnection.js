@@ -19,7 +19,7 @@ export const sequelize = new Sequelize(
     logging: console.log,
     // Set the timezone to Colombia (UTC-5)
     dialectOptions: {
-      timezone: 'America/Bogota'
+      timezone: '-05:00'
     }
   }
 );
