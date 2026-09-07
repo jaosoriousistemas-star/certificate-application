@@ -15,6 +15,7 @@ import municipalityRouter from "./municipalityRouter.js";
 import userRouter from "./userRouter.js";
 import phoneRouter from "./phoneRouter.js";
 import studentRouter from "./studentRouter.js";
+import enrollmentRouter from "./enrollmentRouter.js";
 
 
 // Function to set up API routes
@@ -40,6 +41,7 @@ const routerApi = (app) => {
   router.use('/users', userRouter);
   router.use('/phones', phoneRouter);
   router.use('/students', studentRouter);
+  router.use('/enrollments', enrollmentRouter);
 }
 
 // Export the routerApi function for use in other parts of the application
