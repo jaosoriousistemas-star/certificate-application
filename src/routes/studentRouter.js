@@ -55,7 +55,7 @@ studentRouter.post(
   checkApiKey,
   validatorHandler(studentSchema.newStudentData, 'body'),
   authAppVerifyToken,
-  checkRole(['Máster', 'Administrador']),
+  checkRole(['Máster', 'Administrador', 'Auxiliar']),
   createOneStudent
 );
 
@@ -80,7 +80,7 @@ studentRouter.get(
   checkApiKey,
   validatorHandler(studentSchema.getStudentById, 'body'),
   authAppVerifyToken,
-  checkRole(['Máster', 'Administrador']),
+  checkRole(['Máster', 'Administrador', 'Rector', 'Funcionario', 'Auxiliar']),
   listOneStudent
 );
 
@@ -93,7 +93,7 @@ studentRouter.post(
   checkApiKey,
   validatorHandler(studentSchema.searchStudentsByName, 'body'),
   authAppVerifyToken,
-  checkRole(['Máster', 'Administrador']),
+  checkRole(['Máster', 'Administrador', 'Rector', 'Funcionario', 'Auxiliar']),
   searchStudentsByName
 );
 
@@ -106,7 +106,7 @@ studentRouter.post(
   checkApiKey,
   validatorHandler(studentSchema.getStudentByDocumentNumber, 'body'),
   authAppVerifyToken,
-  checkRole(['Máster', 'Administrador']),
+  checkRole(['Máster', 'Administrador', 'Rector', 'Funcionario', 'Auxiliar']),
   getStudentByDocumentNumber
 );
 
@@ -119,7 +119,7 @@ studentRouter.post(
   checkApiKey,
   validatorHandler(studentSchema.listStudentsByMunicipality, 'body'),
   authAppVerifyToken,
-  checkRole(['Máster', 'Administrador']),
+  checkRole(['Máster', 'Administrador', 'Rector', 'Funcionario', 'Auxiliar']),
   listStudentsByMunicipality
 );
 
@@ -132,7 +132,7 @@ studentRouter.post(
   checkApiKey,
   validatorHandler(studentSchema.listStudentsByDocumentType, 'body'),
   authAppVerifyToken,
-  checkRole(['Máster', 'Administrador']),
+  checkRole(['Máster', 'Administrador', 'Rector', 'Funcionario', 'Auxiliar']),
   listStudentsByDocumentType
 );
 
@@ -147,7 +147,7 @@ studentRouter.patch(
   checkApiKey,
   validatorHandler(studentSchema.updateStudentData, 'body'),
   authAppVerifyToken,
-  checkRole(['Máster', 'Administrador']),
+  checkRole(['Máster', 'Administrador', 'Auxiliar']),
   updateOneStudent
 );
 
