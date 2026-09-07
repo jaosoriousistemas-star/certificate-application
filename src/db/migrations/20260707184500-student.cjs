@@ -100,6 +100,7 @@ module.exports = {
       email_estudiante: {
         type: Sequelize.STRING(254),
         allowNull: true,
+        unique: true,
       },
 
       // Creation timestamp
