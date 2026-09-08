@@ -23,7 +23,7 @@ export const getScoreBySubjectAndEnrollment = async (req, res, next) => {
   const scoreManager = new ScoreServices();
 
   try {
-    const theScore = await scoreManager.getBySubjectAndEnrollment(subjectId, enrollmentId);
+    const theScore = await scoreManager.getScoreBySubjectAndEnrol(subjectId, enrollmentId);
 
     return res.status(200).json({
       success: true,
