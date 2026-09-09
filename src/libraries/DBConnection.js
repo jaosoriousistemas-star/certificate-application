@@ -17,6 +17,10 @@ export const sequelize = new Sequelize(
     dialect: config.dialect,
     // Enable logging of SQL queries to the console
     logging: console.log,
+    // Set the timezone to Colombia (UTC-5)
+    dialectOptions: {
+      timezone: '-05:00'
+    }
   }
 );
 
