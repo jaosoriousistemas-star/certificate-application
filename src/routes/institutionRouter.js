@@ -55,9 +55,9 @@ const institutionRouter = Router();
 institutionRouter.post(
   '/create',
   checkApiKey,
-  validatorHandler(institutionSchema.newInstitutionData, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(institutionSchema.newInstitutionData, 'body'),
   createOneInstitution
 );
 
@@ -80,9 +80,9 @@ institutionRouter.get(
 institutionRouter.get(
   '/list-one',
   checkApiKey,
-  validatorHandler(institutionSchema.getInstitutionById, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(institutionSchema.getInstitutionById, 'body'),
   listOneInstitution
 );
 
@@ -93,9 +93,9 @@ institutionRouter.get(
 institutionRouter.post(
   '/search-by-name',
   checkApiKey,
-  validatorHandler(institutionSchema.searchInstitutionsByName, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(institutionSchema.searchInstitutionsByName, 'body'),
   searchInstitutionsByName
 );
 
@@ -106,9 +106,9 @@ institutionRouter.post(
 institutionRouter.get(
   '/get-by-institutional-code',
   checkApiKey,
-  validatorHandler(institutionSchema.getInstitutionByInstitutionalCode, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(institutionSchema.getInstitutionByInstitutionalCode, 'body'),
   getInstitutionByInstitutionalCode
 );
 
@@ -119,9 +119,9 @@ institutionRouter.get(
 institutionRouter.get(
   '/get-by-nit',
   checkApiKey,
-  validatorHandler(institutionSchema.getInstitutionByNit, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(institutionSchema.getInstitutionByNit, 'body'),
   getInstitutionByNit
 );
 
@@ -132,9 +132,9 @@ institutionRouter.get(
 institutionRouter.patch(
   '/update',
   checkApiKey,
-  validatorHandler(institutionSchema.updateInstitutionData, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(institutionSchema.updateInstitutionData, 'body'),
   updateOneInstitution
 );
 
@@ -145,9 +145,9 @@ institutionRouter.patch(
 institutionRouter.delete(
   '/delete',
   checkApiKey,
-  validatorHandler(institutionSchema.deleteInstitution, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(institutionSchema.deleteInstitution, 'body'),
   deleteOneInstitution
 );
 
