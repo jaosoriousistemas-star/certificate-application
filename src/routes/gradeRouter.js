@@ -55,9 +55,9 @@ const gradeRouter = Router();
 gradeRouter.post(
   '/create',
   checkApiKey,
-  validatorHandler(gradeSchema.newGradeData, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(gradeSchema.newGradeData, 'body'),
   createOneGrade
 );
 
@@ -80,9 +80,9 @@ gradeRouter.get(
 gradeRouter.get(
   '/list-one',
   checkApiKey,
-  validatorHandler(gradeSchema.getGradeById, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador', 'Rector', 'Funcionario', 'Auxiliar']),
+  validatorHandler(gradeSchema.getGradeById, 'body'),
   listOneGrade
 );
 
@@ -93,9 +93,9 @@ gradeRouter.get(
 gradeRouter.post(
   '/get-by-name',
   checkApiKey,
-  validatorHandler(gradeSchema.getGradeByName, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador', 'Rector', 'Funcionario', 'Auxiliar']),
+  validatorHandler(gradeSchema.getGradeByName, 'body'),
   getGradeByName
 );
 
@@ -106,9 +106,9 @@ gradeRouter.post(
 gradeRouter.post(
   '/search-by-description',
   checkApiKey,
-  validatorHandler(gradeSchema.searchGradesByDescription, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(gradeSchema.searchGradesByDescription, 'body'),
   searchGradesByDescription
 );
 
@@ -119,9 +119,9 @@ gradeRouter.post(
 gradeRouter.patch(
   '/update',
   checkApiKey,
-  validatorHandler(gradeSchema.updateGradeData, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(gradeSchema.updateGradeData, 'body'),
   updateOneGrade
 );
 
@@ -132,9 +132,9 @@ gradeRouter.patch(
 gradeRouter.delete(
   '/delete',
   checkApiKey,
-  validatorHandler(gradeSchema.deleteGrade, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(gradeSchema.deleteGrade, 'body'),
   deleteOneGrade
 );
 
