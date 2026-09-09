@@ -56,9 +56,9 @@ const phoneRouter = Router();
 phoneRouter.post(
   '/create',
   checkApiKey,
-  validatorHandler(phoneSchema.newPhoneData, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(phoneSchema.newPhoneData, 'body'),
   createOnePhone
 );
 
@@ -81,9 +81,9 @@ phoneRouter.get(
 phoneRouter.get(
   '/list-one',
   checkApiKey,
-  validatorHandler(phoneSchema.getPhoneById, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(phoneSchema.getPhoneById, 'body'),
   listOnePhone
 );
 
@@ -94,9 +94,9 @@ phoneRouter.get(
 phoneRouter.post(
   '/get-by-number',
   checkApiKey,
-  validatorHandler(phoneSchema.getPhoneByNumber, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(phoneSchema.getPhoneByNumber, 'body'),
   getPhoneByNumber
 );
 
@@ -107,9 +107,9 @@ phoneRouter.post(
 phoneRouter.post(
   '/search-by-number',
   checkApiKey,
-  validatorHandler(phoneSchema.searchPhonesByNumber, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(phoneSchema.searchPhonesByNumber, 'body'),
   searchPhonesByNumber
 );
 
@@ -120,9 +120,9 @@ phoneRouter.post(
 phoneRouter.patch(
   '/update',
   checkApiKey,
-  validatorHandler(phoneSchema.updatePhoneData, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(phoneSchema.updatePhoneData, 'body'),
   updateOnePhone
 );
 
@@ -133,9 +133,9 @@ phoneRouter.patch(
 phoneRouter.delete(
   '/delete',
   checkApiKey,
-  validatorHandler(phoneSchema.deletePhone, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(phoneSchema.deletePhone, 'body'),
   deleteOnePhone
 );
 
