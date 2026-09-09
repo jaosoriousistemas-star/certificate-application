@@ -55,9 +55,9 @@ const scoreRouter = Router();
 scoreRouter.post(
   '/create',
   checkApiKey,
-  validatorHandler(scoreSchema.newScoreData, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(scoreSchema.newScoreData, 'body'),
   createOneScore
 );
 
@@ -80,9 +80,9 @@ scoreRouter.get(
 scoreRouter.get(
   '/list-one',
   checkApiKey,
-  validatorHandler(scoreSchema.getScoreById, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador', 'Rector', 'Funcionario', 'Auxiliar']),
+  validatorHandler(scoreSchema.getScoreById, 'body'),
   listOneScore
 );
 
@@ -93,9 +93,9 @@ scoreRouter.get(
 scoreRouter.post(
   '/get-by-subject',
   checkApiKey,
-  validatorHandler(scoreSchema.listScoresBySubject, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador', 'Rector', 'Funcionario', 'Auxiliar']),
+  validatorHandler(scoreSchema.listScoresBySubject, 'body'),
   listScoresBySubject
 );
 
@@ -106,9 +106,9 @@ scoreRouter.post(
 scoreRouter.post(
   '/get-by-enrollment',
   checkApiKey,
-  validatorHandler(scoreSchema.listScoresByEnrollment, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador', 'Rector', 'Funcionario', 'Auxiliar']),
+  validatorHandler(scoreSchema.listScoresByEnrollment, 'body'),
   listScoresByEnrollment
 );
 
@@ -120,9 +120,9 @@ scoreRouter.post(
 scoreRouter.post(
   '/get-by-subject-and-enrollment',
   checkApiKey,
-  validatorHandler(scoreSchema.getScoreBySubjectAndEnrollment, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador', 'Rector', 'Funcionario', 'Auxiliar']),
+  validatorHandler(scoreSchema.getScoreBySubjectAndEnrollment, 'body'),
   getScoreBySubjectAndEnrollment
 );
 
@@ -133,9 +133,9 @@ scoreRouter.post(
 scoreRouter.patch(
   '/update',
   checkApiKey,
-  validatorHandler(scoreSchema.updateScoreData, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(scoreSchema.updateScoreData, 'body'),
   updateOneScore
 );
 
@@ -146,9 +146,9 @@ scoreRouter.patch(
 scoreRouter.delete(
   '/delete',
   checkApiKey,
-  validatorHandler(scoreSchema.deleteScore, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(scoreSchema.deleteScore, 'body'),
   deleteOneScore
 );
 
