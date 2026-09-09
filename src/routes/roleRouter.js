@@ -63,12 +63,12 @@ roleRouter.post(
   '/create',
   // Step 1: verify the API key
   checkApiKey,
-  // Step 2: validate the creation payload
-  validatorHandler(roleSchema.newRoleData, 'body'),
-  // Step 3: verify the session token
+  // Step 2: verify the session token
   authAppVerifyToken,
-  // Step 4: authorize only the administrator role
+  // Step 3: authorize only the administrator role
   checkRole(['Máster','Administrador']),
+  // Step 4: validate the creation payload
+  validatorHandler(roleSchema.newRoleData, 'body'),
   // Step 5: delegate to the controller
   createOneRole
 );
@@ -81,11 +81,11 @@ roleRouter.get(
   '/list-all',
   // Step 1: verify the API key
   checkApiKey,
-  // Step 2: no schema — this endpoint takes no input parameters
-  // Step 3: verify the session token
+  // Step 2: verify the session token
   authAppVerifyToken,
-  // Step 4: authorize only the administrator role
+  // Step 3: authorize only the administrator role
   checkRole(['Máster','Administrador']),
+  // Step 4: no schema — this endpoint takes no input parameters
   // Step 5: delegate to the controller
   listAllRoles
 );
@@ -98,12 +98,12 @@ roleRouter.get(
   '/list-one',
   // Step 1: verify the API key
   checkApiKey,
-  // Step 1: validate that a valid id was provided
-  validatorHandler(roleSchema.getRoleById, 'body'),
-  // Step 3: verify the session token
+  // Step 2: verify the session token
   authAppVerifyToken,
-  // Step 4: authorize only the administrator role
+  // Step 3: authorize only the administrator role
   checkRole(['Máster','Administrador']),
+  // Step 4: validate that a valid id was provided
+  validatorHandler(roleSchema.getRoleById, 'body'),
   // Step 5: delegate to the controller
   listOneRole
 );
@@ -116,12 +116,12 @@ roleRouter.get(
   '/get-by-name',
   // Step 1: verify the API key
   checkApiKey,
-  // Step 2: validate the name
-  validatorHandler(roleSchema.getRoleByName, 'body'),
-  // Step 3: verify the session token
+  // Step 2: verify the session token
   authAppVerifyToken,
-  // Step 4: authorize only the administrator role
+  // Step 3: authorize only the administrator role
   checkRole(['Máster','Administrador']),
+  // Step 4: validate the name
+  validatorHandler(roleSchema.getRoleByName, 'body'),
   // Step 5: delegate to the controller
   getRoleByName
 );
@@ -134,12 +134,12 @@ roleRouter.post(
   '/search-by-description',
   // Step 1: verify the API key
   checkApiKey,
-  // Step 2: validate the partial search text
-  validatorHandler(roleSchema.searchRolesByDescription, 'body'),
-  // Step 3: verify the session token
+  // Step 2: verify the session token
   authAppVerifyToken,
-  // Step 4: authorize only the administrator role
+  // Step 3: authorize only the administrator role
   checkRole(['Máster','Administrador']),
+  // Step 4: validate the partial search text
+  validatorHandler(roleSchema.searchRolesByDescription, 'body'),
   // Step 5: delegate to the controller
   searchRolesByDescription
 );
@@ -152,12 +152,12 @@ roleRouter.patch(
   '/update',
   // Step 1: verify the API key
   checkApiKey,
-  // Step 2: validate the update payload
-  validatorHandler(roleSchema.updateRoleData, 'body'),
-  // Step 3: verify the session token
+  // Step 2: verify the session token
   authAppVerifyToken,
-  // Step 4: authorize only the administrator role
+  // Step 3: authorize only the administrator role
   checkRole(['Máster','Administrador']),
+  // Step 4: validate the update payload
+  validatorHandler(roleSchema.updateRoleData, 'body'),
   // Step 5: delegate to the controller
   updateOneRole
 );
@@ -170,12 +170,12 @@ roleRouter.delete(
   '/delete',
   // Step 1: verify the API key
   checkApiKey,
-  // Step 2: validate that a valid id was provided
-  validatorHandler(roleSchema.deleteRole, 'body'),
-  // Step 3: verify the session token
+  // Step 2: verify the session token
   authAppVerifyToken,
-  // Step 4: authorize only the administrator role
+  // Step 3: authorize only the administrator role
   checkRole(['Máster','Administrador']),
+  // Step 4: validate that a valid id was provided
+  validatorHandler(roleSchema.deleteRole, 'body'),
   // Step 5: delegate to the controller
   deleteOneRole
 );
