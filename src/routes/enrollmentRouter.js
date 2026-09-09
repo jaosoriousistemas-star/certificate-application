@@ -59,9 +59,9 @@ const enrollmentRouter = Router();
 enrollmentRouter.post(
   '/create',
   checkApiKey,
-  validatorHandler(enrollmentSchema.newEnrollmentData, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador', 'Auxiliar']),
+  validatorHandler(enrollmentSchema.newEnrollmentData, 'body'),
   createOneEnrollment
 );
 
@@ -84,9 +84,9 @@ enrollmentRouter.get(
 enrollmentRouter.get(
   '/list-one',
   checkApiKey,
-  validatorHandler(enrollmentSchema.getEnrollmentById, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador', 'Rector', 'Funcionario', 'Auxiliar']),
+  validatorHandler(enrollmentSchema.getEnrollmentById, 'body'),
   listOneEnrollment
 );
 
@@ -98,9 +98,9 @@ enrollmentRouter.get(
 enrollmentRouter.post(
   '/get-by-student',
   checkApiKey,
-  validatorHandler(enrollmentSchema.listEnrollmentsByStudent, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador', 'Rector', 'Funcionario', 'Auxiliar']),
+  validatorHandler(enrollmentSchema.listEnrollmentsByStudent, 'body'),
   listEnrollmentsByStudent
 );
 
@@ -112,9 +112,9 @@ enrollmentRouter.post(
 enrollmentRouter.post(
   '/get-by-group',
   checkApiKey,
-  validatorHandler(enrollmentSchema.listEnrollmentsByGroup, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador', 'Rector', 'Funcionario', 'Auxiliar']),
+  validatorHandler(enrollmentSchema.listEnrollmentsByGroup, 'body'),
   listEnrollmentsByGroup
 );
 
@@ -126,9 +126,9 @@ enrollmentRouter.post(
 enrollmentRouter.post(
   '/get-by-student-and-group',
   checkApiKey,
-  validatorHandler(enrollmentSchema.getEnrollmentByStudentAndGroup, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador', 'Rector', 'Funcionario', 'Auxiliar']),
+  validatorHandler(enrollmentSchema.getEnrollmentByStudentAndGroup, 'body'),
   getEnrollmentByStudentAndGroup
 );
 
@@ -139,9 +139,9 @@ enrollmentRouter.post(
 enrollmentRouter.patch(
   '/update',
   checkApiKey,
-  validatorHandler(enrollmentSchema.updateEnrollmentData, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador', 'Auxiliar']),
+  validatorHandler(enrollmentSchema.updateEnrollmentData, 'body'),
   updateOneEnrollment
 );
 
@@ -152,9 +152,9 @@ enrollmentRouter.patch(
 enrollmentRouter.delete(
   '/delete',
   checkApiKey,
-  validatorHandler(enrollmentSchema.deleteEnrollment, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(enrollmentSchema.deleteEnrollment, 'body'),
   deleteOneEnrollment
 );
 
