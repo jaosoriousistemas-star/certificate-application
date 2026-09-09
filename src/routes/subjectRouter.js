@@ -54,9 +54,9 @@ const subjectRouter = Router();
 subjectRouter.post(
   '/create',
   checkApiKey,
-  validatorHandler(subjectSchema.newSubjectData, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(subjectSchema.newSubjectData, 'body'),
   createOneSubject
 );
 
@@ -92,9 +92,9 @@ subjectRouter.get(
 subjectRouter.post(
   '/search-by-name',
   checkApiKey,
-  validatorHandler(subjectSchema.searchSubjectsByName, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador', 'Rector', 'Funcionario', 'Auxiliar']),
+  validatorHandler(subjectSchema.searchSubjectsByName, 'body'),
   searchSubjectsByName
 );
 
@@ -105,9 +105,9 @@ subjectRouter.post(
 subjectRouter.patch(
   '/update',
   checkApiKey,
-  validatorHandler(subjectSchema.updateSubjectData, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(subjectSchema.updateSubjectData, 'body'),
   updateOneSubject
 );
 
@@ -118,9 +118,9 @@ subjectRouter.patch(
 subjectRouter.delete(
   '/delete',
   checkApiKey,
-  validatorHandler(subjectSchema.deleteSubject, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(subjectSchema.deleteSubject, 'body'),
   deleteOneSubject
 );
 
