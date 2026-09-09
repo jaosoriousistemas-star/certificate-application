@@ -57,9 +57,9 @@ const groupRouter = Router();
 groupRouter.post(
   '/create',
   checkApiKey,
-  validatorHandler(groupSchema.newGroupData, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(groupSchema.newGroupData, 'body'),
   createOneGroup
 );
 
@@ -82,9 +82,9 @@ groupRouter.get(
 groupRouter.get(
   '/list-one',
   checkApiKey,
-  validatorHandler(groupSchema.getGroupById, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador', 'Rector', 'Funcionario', 'Auxiliar']),
+  validatorHandler(groupSchema.getGroupById, 'body'),
   listOneGroup
 );
 
@@ -95,9 +95,9 @@ groupRouter.get(
 groupRouter.post(
   '/search-by-name',
   checkApiKey,
-  validatorHandler(groupSchema.searchGroupsByName, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador', 'Rector', 'Funcionario', 'Auxiliar']),
+  validatorHandler(groupSchema.searchGroupsByName, 'body'),
   searchGroupsByName
 );
 
@@ -108,9 +108,9 @@ groupRouter.post(
 groupRouter.get(
   '/get-by-institution',
   checkApiKey,
-  validatorHandler(groupSchema.listGroupsByInstitution, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(groupSchema.listGroupsByInstitution, 'body'),
   listGroupsByInstitution
 );
 
@@ -121,9 +121,9 @@ groupRouter.get(
 groupRouter.get(
   '/get-by-grade-and-year',
   checkApiKey,
-  validatorHandler(groupSchema.listGroupsByGradeAndYear, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador', 'Rector', 'Funcionario', 'Auxiliar']),
+  validatorHandler(groupSchema.listGroupsByGradeAndYear, 'body'),
   listGroupsByGradeAndYear
 );
 
@@ -134,9 +134,9 @@ groupRouter.get(
 groupRouter.patch(
   '/update',
   checkApiKey,
-  validatorHandler(groupSchema.updateGroupData, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(groupSchema.updateGroupData, 'body'),
   updateOneGroup
 );
 
@@ -147,9 +147,9 @@ groupRouter.patch(
 groupRouter.patch(
   '/change-status',
   checkApiKey,
-  validatorHandler(groupSchema.changeGroupStatus, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(groupSchema.changeGroupStatus, 'body'),
   changeGroupStatus
 );
 
@@ -160,9 +160,9 @@ groupRouter.patch(
 groupRouter.delete(
   '/delete',
   checkApiKey,
-  validatorHandler(groupSchema.deleteGroup, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(groupSchema.deleteGroup, 'body'),
   deleteOneGroup
 );
 
