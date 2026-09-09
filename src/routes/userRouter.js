@@ -68,9 +68,9 @@ userRouter.post(
 userRouter.post(
   '/create',
   checkApiKey,
-  validatorHandler(userSchema.newUserData, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(userSchema.newUserData, 'body'),
   createOneUser
 );
 
@@ -93,9 +93,9 @@ userRouter.get(
 userRouter.get(
   '/list-one',
   checkApiKey,
-  validatorHandler(userSchema.getUserById, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(userSchema.getUserById, 'body'),
   listOneUser
 );
 
@@ -108,9 +108,9 @@ userRouter.get(
 userRouter.patch(
   '/update',
   checkApiKey,
-  validatorHandler(userSchema.updateUserData, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(userSchema.updateUserData, 'body'),
   updateOneUser
 );
 
@@ -138,9 +138,9 @@ userRouter.post(
 userRouter.delete(
   '/delete',
   checkApiKey,
-  validatorHandler(userSchema.deleteUser, 'body'),
   authAppVerifyToken,
   checkRole(['Máster', 'Administrador']),
+  validatorHandler(userSchema.deleteUser, 'body'),
   deleteOneUser
 );
 
