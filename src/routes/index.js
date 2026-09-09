@@ -12,6 +12,7 @@ import documentTypeRouter from "./documentTypeRouter.js";
 import gradeRouter from "./gradeRouter.js";
 import institutionRouter from "./institutionRouter.js";
 import groupRouter from "./groupRouter.js";
+import subjectRouter from "./subjectRouter.js";
 import studentRouter from "./studentRouter.js";
 import enrollmentRouter from "./enrollmentRouter.js";
 import userRouter from "./userRouter.js";
@@ -40,6 +41,7 @@ const routerApi = (app) => {
   router.use('/grades', gradeRouter);
   router.use('/institutions', institutionRouter);
   router.use('/groups', groupRouter);
+  router.use('/subjects', subjectRouter);
   router.use('/students', studentRouter);
   router.use('/enrollments', enrollmentRouter);
   router.use('/users', userRouter);
